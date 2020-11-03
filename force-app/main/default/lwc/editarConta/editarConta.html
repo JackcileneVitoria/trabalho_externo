@@ -1,0 +1,15 @@
+<template>
+    <lightning-record-edit-form record-id={recordId} object-api-name="Account"
+    onsuccess={handleSuccess} onsubmit ={handleSubmit}>
+        <lightning-messages></lightning-messages>
+        <lightning-input-field field-name="Name"></lightning-input-field>
+        <lightning-input-field field-name="AccountNumber"></lightning-input-field>
+        <lightning-input-field field-name="Type"></lightning-input-field>
+        <lightning-button   class="slds-m-top_small"
+                            variant="brand"
+                            type="submit"
+                            name="atualizar"
+                            label="Atualizar">
+        </lightning-button>
+    </lightning-record-edit-form>
+</template>
