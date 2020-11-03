@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>InformacoesAtualizadasSucesso</fullName>
+        <language>pt_BR</language>
+        <protected>true</protected>
+        <shortDescription>InformacoesAtualizadasSucesso</shortDescription>
+        <value>Informações atualizadas com sucesso!</value>
+    </labels>
+</CustomLabels>
