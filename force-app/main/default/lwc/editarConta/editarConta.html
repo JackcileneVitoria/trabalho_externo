@@ -1,7 +1,7 @@
 <template>
     <lightning-card variant="Narrow" icon-name="standard:account" title="Atualizar Informações">
         <lightning-record-edit-form record-id={recordId} object-api-name="Account"
-        onsuccess={handleSuccess} onsubmit ={handleSubmit}>
+        onsuccess={handleSuccess} onerror={handleError}>
             <div class="campos" style="padding: 2%;">
                 <lightning-input-field field-name="Name"></lightning-input-field>
                 <lightning-input-field field-name="AccountNumber"></lightning-input-field>
