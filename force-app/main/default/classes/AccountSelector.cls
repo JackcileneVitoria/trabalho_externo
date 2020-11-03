@@ -1,9 +1,22 @@
 public class AccountSelector {
     public static List<Task> retornaTarefasPorSetIdContas(Set<Id> idsContas){
-        return [SELECT Id FROM Task WHERE CreatedDate < LAST_N_DAYS:90 AND WhatId IN: idsContas];
+        Date ultimos90Dias = Date.today().addDays(-90);
+
+        return [SELECT 
+                    Id 
+                FROM 
+                    Task 
+                WHERE 
+                    CreatedDate >: ultimos90Dias 
+                AND 
+                    CreatedDate <= TODAY
+                AND 
+                    WhatId IN: idsContas];
     }
 
     public static List<Opportunity> retornaOppPorSetIdContas(Set<Id> idsContas){
+        Date ultimos120Dias = Date.today().addDays(-120);
+
         return [SELECT 
                     Id, 
                     AccountId 
@@ -12,7 +25,9 @@ public class AccountSelector {
                 WHERE 
                     AccountId IN: idsContas 
                 AND 
-                    CloseDate < LAST_N_DAYS:120 
+                    CloseDate >: ultimos120Dias
+                AND
+                    (CloseDate <= TODAY OR CloseDate > TODAY) 
                 AND 
                     StageName != 'Negotiation/Review'];
     }

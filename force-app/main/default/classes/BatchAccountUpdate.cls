@@ -10,23 +10,21 @@ global class BatchAccountUpdate implements Database.Batchable<sObject> {
             idsContas.add(conta.Id);
         }
 
-        Set<Id> idsContasInativar = new Set<Id>();
-
         // Busca as tarefas que não possuem data de criação nos últimos 90 dias
         List<Task> tarefasLista = AccountSelector.retornaTarefasPorSetIdContas(idsContas);
         for (Task tarefa : tarefasLista) {
-            idsContasInativar.add(tarefa.WhatId);
+            idsContas.remove(tarefa.WhatId);
         }
 
         // Busca as oportunidades que possuem data de fechamento fora dos últimos 120 dias 
         // e com fase diferente de Negociação
         List<Opportunity> oportunidadesLista = AccountSelector.retornaOppPorSetIdContas(idsContas);
         for (Opportunity oportunidade : oportunidadesLista) {
-            idsContasInativar.add(oportunidade.AccountId);
+            idsContas.remove(oportunidade.AccountId);
         }
 
         List<Account> contasParaAtualizar = new List<Account>();
-        List<Account> armazenaContasAtualizar = AccountSelector.retornaContasPorSetId(idsContasInativar);
+        List<Account> armazenaContasAtualizar = AccountSelector.retornaContasPorSetId(idsContas);
         for (Account conta : armazenaContasAtualizar) {
             conta.Inativa__c = true;
             contasParaAtualizar.add(conta);
