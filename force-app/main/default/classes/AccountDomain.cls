@@ -7,12 +7,12 @@ public class AccountDomain {
                 if (conta.Type == 'CPF') {
                     Boolean cpfValido = ValidateUtil.isCPF(conta.AccountNumber.replace('.','').replace('-',''));
                     if (!cpfValido) {
-                        conta.addError(label.NumeroClienteInvalido);
+                        conta.addError(Label.NumeroClienteInvalido);
                     }
                 }else if(conta.Type == 'CNPJ'){
                     Boolean cnpjValido = ValidateUtil.isCNPJ(conta.AccountNumber.replace('.','').replace('/','').replace('-',''));
                     if (!cnpjValido) {
-                        conta.addError(label.NumeroClienteInvalido);
+                        conta.addError(Label.NumeroClienteInvalido);
                     }
                 }
             }
