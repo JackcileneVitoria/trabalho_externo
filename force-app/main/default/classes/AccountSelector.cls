@@ -3,7 +3,8 @@ public class AccountSelector {
         Date ultimos90Dias = Date.today().addDays(-90);
 
         return [SELECT 
-                    Id 
+                    Id,
+                    WhatId 
                 FROM 
                     Task 
                 WHERE 

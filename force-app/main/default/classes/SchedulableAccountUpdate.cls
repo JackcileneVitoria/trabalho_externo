@@ -1,7 +1,7 @@
 global class SchedulableAccountUpdate implements Schedulable {
     global void execute(SchedulableContext sc){
         BatchAccountUpdate batch = new BatchAccountUpdate();
-        database.executebatch(batch ,200);
+        database.executebatch(batch, 100);
     }
 }
 
