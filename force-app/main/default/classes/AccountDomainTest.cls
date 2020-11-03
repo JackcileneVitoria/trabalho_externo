@@ -8,12 +8,14 @@ public class AccountDomainTest {
         contaConsumidor.RecordTypeId = idContaConsumidorFinal;
         contaConsumidor.Name = 'Consumidor Final';
         contaConsumidor.AccountNumber = '496.041.780-32';
+        contaConsumidor.Type = 'CPF';
         insert contaConsumidor;
 
         Account contaParceiro = new Account();
         contaParceiro.RecordTypeId = idContaParceiro;
         contaParceiro.Name = 'Conta Parceiro';
         contaParceiro.AccountNumber = '44.221.208/0001-06';
+        contaParceiro.Type = 'CNPJ';
         insert contaParceiro;
     }
 
