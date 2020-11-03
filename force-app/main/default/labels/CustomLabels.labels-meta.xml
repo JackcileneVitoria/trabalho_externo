@@ -7,4 +7,11 @@
         <shortDescription>InformacoesAtualizadasSucesso</shortDescription>
         <value>Informações atualizadas com sucesso!</value>
     </labels>
+    <labels>
+        <fullName>NumeroClienteInvalido</fullName>
+        <language>pt_BR</language>
+        <protected>true</protected>
+        <shortDescription>NumeroClienteInvalido</shortDescription>
+        <value>Número do cliente inválido</value>
+    </labels>
 </CustomLabels>

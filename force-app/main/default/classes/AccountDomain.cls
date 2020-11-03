@@ -7,12 +7,12 @@ public class AccountDomain {
                 if (conta.RecordTypeId == idContaConsumidorFinal) {
                     Boolean cpfValido = ValidateUtil.isCPF(conta.AccountNumber.replace('.','').replace('-',''));
                     if (!cpfValido) {
-                        conta.addError('Número do cliente inválido');
+                        conta.addError(label.NumeroClienteInvalido);
                     }
                 }else {
                     Boolean cnpjValido = ValidateUtil.isCNPJ(conta.AccountNumber.replace('.','').replace('/','').replace('-',''));
                     if (!cnpjValido) {
-                        conta.addError('Número do cliente inválido');
+                        conta.addError(label.NumeroClienteInvalido);
                     }
                 }
             }
