@@ -1,15 +1,20 @@
 <template>
-    <lightning-record-edit-form record-id={recordId} object-api-name="Account"
-    onsuccess={handleSuccess} onsubmit ={handleSubmit}>
-        <lightning-messages></lightning-messages>
-        <lightning-input-field field-name="Name"></lightning-input-field>
-        <lightning-input-field field-name="AccountNumber"></lightning-input-field>
-        <lightning-input-field field-name="Type"></lightning-input-field>
-        <lightning-button   class="slds-m-top_small"
-                            variant="brand"
-                            type="submit"
-                            name="atualizar"
-                            label="Atualizar">
-        </lightning-button>
-    </lightning-record-edit-form>
+    <lightning-card variant="Narrow" icon-name="standard:account" title="Atualizar Informações">
+        <lightning-record-edit-form record-id={recordId} object-api-name="Account"
+        onsuccess={handleSuccess} onsubmit ={handleSubmit}>
+            <div class="campos" style="padding: 2%;">
+                <lightning-input-field field-name="Name"></lightning-input-field>
+                <lightning-input-field field-name="AccountNumber"></lightning-input-field>
+                <lightning-input-field field-name="Type"></lightning-input-field>
+            </div>
+            <div class="botaoAtualizar" style="padding-left: 2%; padding-top: 2%;">
+                <lightning-button   class="slds-m-top_small"
+                                variant="success"
+                                type="submit"
+                                name="atualizar"
+                                label="Atualizar">
+                </lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
 </template>
